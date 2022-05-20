@@ -30,7 +30,9 @@ public class SortList {
     // 归并排序
     private static ListNode mergeSort(ListNode head) {
         // 如果没有结点/只有一个结点，无需排序，直接返回
-        if (head == null || head.next == null) return head;
+        if (head == null || head.next == null) {
+            return head;
+        }
         // 快慢指针找出中位点
         ListNode slowp = head, fastp = head.next.next, l, r;
         while (fastp != null && fastp.next != null) {
