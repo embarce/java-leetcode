@@ -45,9 +45,18 @@ public class Rob {
             return Math.max(nums[0], nums[1]);
         }
         int [] dp =new int[nums.length];
+        /**
+         * 处理第一家
+         */
         dp[0]=nums[0];
+        /**
+         * 处理第二家
+         */
         dp[1]=Math.max(nums[0], nums[1]);
         for (int i = 2; i < nums.length; i++) {
+            /**
+             * 每次决策在于前面选了什么，当下选的和隔壁两家的和，最佳决策
+             */
             dp[i]=Math.max(dp[i-2]+nums[i],dp[i-1]);
         }
         return dp[nums.length-1];
