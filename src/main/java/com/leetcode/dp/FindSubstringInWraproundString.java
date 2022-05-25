@@ -1,4 +1,4 @@
-package com.leetcode.strTest;
+package com.leetcode.dp;
 
 import java.util.Arrays;
 import java.util.HashSet;
