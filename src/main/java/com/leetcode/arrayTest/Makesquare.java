@@ -81,12 +81,15 @@ public class Makesquare {
             if (allocate(matchsticks, index - 1, sums, avg)) {
                 return true;
             }
+            /**
+             * 他第二根不行，回退到刚才选的，吐出火柴
+             */
             sums[i] -= matchsticks[index];
         }
         return false;
     }
 
     public static void main(String[] args) {
-        System.out.println(makesquare(new int[]{1,1,2,2,2}));
+        System.out.println(makesquare(new int[]{5,5,5,5,4,4,4,4,3,3,3,3}));
     }
 }
