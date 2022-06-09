@@ -40,7 +40,9 @@ public class TopKFrequent {
             occurrences.put(num, occurrences.getOrDefault(num, 0) + 1);
         }
 
-        // int[] 的第一个元素代表数组的值，第二个元素代表了该值出现的次数
+        /**
+         * int[] 的第一个元素代表数组的值，第二个元素代表了该值出现的次数 优先队列
+         */
         PriorityQueue<int[]> queue = new PriorityQueue<int[]>(new Comparator<int[]>() {
             @Override
             public int compare(int[] m, int[] n) {
