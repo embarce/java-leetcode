@@ -35,18 +35,30 @@ public class FindKthLargest {
      * @return
      */
     public static  int findKthLargest(int[] nums, int k) {
+        /**
+         * 维护一个优先级堆
+         */
         PriorityQueue<Integer> queue = new PriorityQueue<>(new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
                 return - o1.compareTo(o2);
             }
         });
+        /**
+         * 入队
+         */
         for (int i = 0; i < nums.length; i++) {
             queue.offer(nums[i]);
         }
+        /**
+         * 把前k-1大的移出
+         */
         for (int i = 0; i < k-1; i++) {
             queue.poll();
         }
+        /**
+         * 第k大的元素
+         */
         return queue.peek();
     }
 
